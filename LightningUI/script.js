@@ -217,3 +217,47 @@ menuToggle.addEventListener("click", () => {
 setTimeout(function () {
   document.body.classList.remove("preload");
 }, 500);
+
+//! ---------- Manage de contact form ---------- !//
+const btn = document.querySelector(".sendEmail");
+let name = document.querySelector("#name");
+let business = document.querySelector("#business");
+let adress = document.querySelector("#adress");
+let demande = document.querySelector("#demande");
+let emailBody = document.querySelector("#request");
+let mailObject = "";
+let emailLink = "";
+
+const UpdateForm = (input, variable) => {
+  input.addEventListener("input", () => {
+    variable = input.value;
+    mailObject =
+      demande.value +
+      " - " +
+      name.value +
+      ", " +
+      business.value +
+      ", " +
+      adress.value;
+    emailLink = `mailto:cedric.theveneau@agriconomie.com?subject=${mailObject}&body=${emailBody.value}`;
+    btn.firstElementChild.href = emailLink;
+  });
+};
+
+UpdateForm(name, name);
+UpdateForm(business, business);
+UpdateForm(adress, adress);
+UpdateForm(demande, demande);
+UpdateForm(emailBody, emailBody);
+
+// Initialisation des valeurs
+mailObject =
+  demande.value +
+  " - " +
+  name.value +
+  " " +
+  business.value +
+  " " +
+  adress.value;
+emailLink = `mailto:cedric.theveneau@agriconomie.com?subject=${mailObject}&body=${emailBody.value}`;
+btn.firstElementChild.href = emailLink;
