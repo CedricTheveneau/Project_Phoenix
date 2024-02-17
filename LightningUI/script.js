@@ -159,42 +159,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  //! ---------- DARK/LIGHT MODE ---------- !//
-
-  //* Set needed variables
-  const button = document.querySelector(".darkModeToggle");
-  const svgs = document.querySelectorAll(".darkModeToggleSVG");
-  const body = document.getElementsByTagName("body")[0];
-
-  //* Detects click on button and changes the displayed SVG and saves in local storage the theme preference
-  button.addEventListener("click", () => {
-    svgs.forEach((e) => {
-      e.classList.toggle("toggle");
-    });
-    if (svgs[1].classList.contains("toggle")) {
-      localStorage.setItem("LightningUI-Theme", "Light");
-      body.classList.remove("dark");
-    } else {
-      localStorage.setItem("LightningUI-Theme", "Dark");
-      body.classList.add("dark");
-    }
-  });
-
-  //* Fetches if a prefered theme is defined in local storage, if yes, uses it
-  document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-      const preferedTheme = localStorage.getItem("LightningUI-Theme");
-      if (preferedTheme == null || preferedTheme == "Light") {
-        return;
-      } else if (preferedTheme == "Dark") {
-        button.click();
-        body.classList.add("dark");
-      }
-    },
-    false
-  );
-
   //! ---------- REDIRECTION TO QUICKSTART PAGE AFTER DOWNLOAD OF LIBRARY ---------- !//
 
   const DLBtns = document.querySelectorAll("a[download]");
@@ -322,3 +286,39 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+//! ---------- DARK/LIGHT MODE ---------- !//
+
+//* Set needed variables
+const button = document.querySelector(".darkModeToggle");
+const svgs = document.querySelectorAll(".darkModeToggleSVG");
+const body = document.getElementsByTagName("body")[0];
+
+//* Detects click on button and changes the displayed SVG and saves in local storage the theme preference
+button.addEventListener("click", () => {
+  svgs.forEach((e) => {
+    e.classList.toggle("toggle");
+  });
+  if (svgs[1].classList.contains("toggle")) {
+    localStorage.setItem("LightningUI-Theme", "Light");
+    body.classList.remove("dark");
+  } else {
+    localStorage.setItem("LightningUI-Theme", "Dark");
+    body.classList.add("dark");
+  }
+});
+
+//* Fetches if a prefered theme is defined in local storage, if yes, uses it
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+    const preferedTheme = localStorage.getItem("LightningUI-Theme");
+    if (preferedTheme == null || preferedTheme == "Light") {
+      return;
+    } else if (preferedTheme == "Dark") {
+      button.click();
+      body.classList.add("dark");
+    }
+  },
+  false
+);
