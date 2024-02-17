@@ -311,6 +311,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // https://codepen.io/MaxSebastian/pen/jOzMWxE
 
   // Infinite scrolling carousel - clients' feedback
+  // Original codepen : https://codepen.io/ShayStibelman/pen/JjxZNvE
   const lists = document.querySelectorAll(".infiniteCarousel");
   lists.forEach((list) => {
     const listContent = Array.from(list.children);
