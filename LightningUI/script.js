@@ -125,7 +125,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "rotateZ(180deg)";
     } else if (
       window.innerHeight + Math.round(window.scrollY) <= window.innerHeight &&
-      document.querySelector(".carousel") == null
+      document.querySelector(".carousel") == null &&
+      document.querySelector(".heroContent") == null
     ) {
       document.querySelector(".overflay svg").style.transform =
         "translateX(-48vw) scale(0.5)";
@@ -142,7 +143,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "translateX(-48vw) scale(0.5)";
     } else if (
       window.innerHeight + Math.round(window.scrollY) >= window.innerHeight &&
-      document.querySelector(".carousel") == null
+      document.querySelector(".carousel") == null &&
+      document.querySelector(".heroContent") == null
     ) {
       document.querySelector(".overflay svg").style.transform =
         "translateX(-48vw) scale(0.5)";
@@ -152,7 +154,8 @@ document.addEventListener("DOMContentLoaded", function () {
   window.onload = function (ev) {
     if (
       window.innerHeight + Math.round(window.scrollY) >= window.innerHeight &&
-      document.querySelector(".carousel") == null
+      document.querySelector(".carousel") == null &&
+      document.querySelector(".heroContent") == null
     ) {
       document.querySelector(".overflay svg").style.transform =
         "translateX(-48vw) scale(0.5)";
