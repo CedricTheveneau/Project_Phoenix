@@ -209,7 +209,7 @@ body {
     }
 
     & svg:hover path {
-      fill: var(--themeDark50);
+      fill: var(--themeAccent);
     }
   }
 
@@ -432,8 +432,20 @@ body {
   }
 
   >main {
+    overflow: hidden;
+
     >.hero {
+      position: relative;
+
+      >video {
+        filter: opacity(0.5) saturate(0.5);
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+      }
+
       >.heroContent {
+        z-index: 2;
         max-width: 90%;
         margin: 0 auto;
         height: 100%;
@@ -594,7 +606,7 @@ body {
               }
 
               >button {
-                /* transform: translateX(30px); */
+                transform: translateX(30px);
                 padding: 5px;
                 border: transparent;
                 background-color: transparent;
@@ -676,6 +688,10 @@ body {
 
               >p {
                 text-align: right;
+              }
+
+              >button {
+                transform: translateX(-30px);
               }
             }
           }
@@ -1183,6 +1199,49 @@ body {
             }
           }
         }
+      }
+
+      >.infiniteCarousel {
+        width: 100vw;
+        mask: linear-gradient(90deg, transparent, var(--accentLight) 40%, var(--accentLight) 60%, transparent);
+        -webkit-mask: linear-gradient(90deg, transparent, var(--accentLight) 40%, var(--accentLight) 60%, transparent);
+
+        >ul {
+          display: flex;
+          gap: 50px;
+          list-style: none;
+          padding: 0;
+
+          >li {
+            display: grid;
+            gap: 20px;
+            max-width: 40dvw;
+          }
+        }
+      }
+
+      >.infiniteCarousel.reversed {
+        >ul {
+          flex-direction: row-reverse;
+        }
+      }
+
+      >.infiniteCarousel[data-animated] {
+        overflow: hidden;
+      }
+
+      >.infiniteCarousel[data-animated] .infiniteCarouselList {
+        width: max-content;
+        animation: scroll 20s linear infinite;
+      }
+
+      >.reversed.infiniteCarousel[data-animated] .infiniteCarouselList {
+        width: max-content;
+        animation: scroll 20s linear infinite reverse;
+      }
+
+      >.infiniteCarousel[data-animated]:has(li:hover) .infiniteCarouselList {
+        animation-play-state: paused;
       }
 
       >button:not(.simpler) {
@@ -1710,6 +1769,35 @@ body.dark {
   }
 }
 
+.toAnimate {
+  transform: translateX(-10dvw);
+  opacity: 0;
+  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+}
+
+.toAnimate.reversed {
+  transform: translateX(10dvw);
+}
+
+.toAnimate.bottom {
+  transform: translateX(0) translateY(50px);
+}
+
+.toAnimate.top {
+  transform: translateX(0) translateY(-50px);
+}
+
+.animated {
+  transform: translateX(0) !important;
+  opacity: 1;
+}
+
+.animated.bottom,
+.animated.top {
+  transform: translateX(0) translateY(0) !important;
+  opacity: 1;
+}
+
 /**!---------- For styles that don't work while nested ----------!**/
 svg.darkModeToggleSVG {
   transform: translateY(10%);
@@ -2018,6 +2106,12 @@ a:hover>svg.ctaArrow.pulse {
   }
 }
 
+@keyframes scroll {
+  to {
+    translate: calc(-50% - 5px);
+  }
+}
+
 /**?---------- Responsive menu animation ----------?**/
 
 @keyframes menuEntryRight {
@@ -2058,6 +2152,14 @@ a:hover>svg.ctaArrow.pulse {
   .branding>span,
   .branding>p:not(p:nth-child(1)) {
     display: none;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+
+  .hero>video {
+    height: 100%;
+    width: auto !important;
   }
 }
 
