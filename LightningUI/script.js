@@ -17,12 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   //! ---------- CAROUSEL ---------- !//
-  const carouselSetup = () => {
-    //* Set needed variables
-    const track = document.querySelector(".carousel__track");
-    if (track == null) {
-      return;
-    } else {
+  const carouselSetup = (track, duration) => {
+    if (track !== null) {
       const slides = Array.from(track.children);
       const dotsNav = document.querySelector(".carousel__nav");
 
@@ -86,11 +82,22 @@ document.addEventListener("DOMContentLoaded", function () {
             carouselAutoplay();
           }
           dots[i].click();
-        }, 5000 * i);
+        }, duration * i);
       }
     }
   };
-  carouselSetup();
+  //* Set needed variables
+  const heroTrack = document.querySelectorAll(".hero.carousel__track")[0];
+  if (heroTrack) {
+    const duration = 5000;
+    carouselSetup(heroTrack, duration);
+  }
+  const contentTracks = document.querySelectorAll(".content .carousel__track");
+  for (let index = 0; index < contentTracks.length; index++) {
+    let track = contentTracks[index];
+    const duration = 15000;
+    carouselSetup(track, duration);
+  }
 
   //** Removes the reversed class to every slide on mobile devices **/
   const toRemove = document.querySelectorAll(".carousel__slide.reversed");
