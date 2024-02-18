@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/svg+xml" href="../LightningUI/assets/logoDark.svg" alt="Favicon" />
+    <link rel="shortcut icon" type="image/svg+xml" href="../assets/logoColor.svg" alt="Favicon" />
     <link rel="stylesheet" href="../LightningUI/style.css">
     <script src="../LightningUI/script.js" defer></script>
     <meta name="description"
@@ -166,7 +166,7 @@
                     <li><a href="./qui-sommes-nous.html" class="link" title="Apprenez à nous connaître">Qui
                             sommes-nous ?</a></li>
                     <span class="navbarSeparator">|</span>
-                    <li><a href="./contact-info.html" class="link active"
+                    <li><a href="./contact.html" class="link active"
                             title="Découvrez les moyens de nous contacter">Contact</a></li>
                     <span class="navbarSeparator">|</span>
                     <li><button class="navCTA"><a href="./contact.html" class="link"
@@ -190,15 +190,15 @@
             <p>Enfin, sachez qu'aucune des données renseignées dans le formulaire ci-dessous n'est conservée.</p>
         </div>
         <div class="content fit">
-            <div class="gridBlocs">
+            <div class="gridBlocs form">
                 <div class="info">
                     <h3>Informations vous concernant</h3>
                     <label for="name">Nom complet :</label>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="name" placeholder="John Doe">
                     <label for="business">Nom de votre exploitation :</label>
-                    <input type="text" name="business" id="business">
+                    <input type="text" name="business" id="business" placeholder="Ferme des Tuiles">
                     <label for="adress">Adresse de l'exploitation :</label>
-                    <input type="text" name="adress" id="adress">
+                    <input type="text" name="adress" id="adress" placeholder="56 rue Grande 77760 Guercheville">
                     <label for="demande">Type de demande</label>
                     <select name="demande" id="demande">
                         <option value="Demande de devis">Demande de devis</option>
@@ -208,9 +208,9 @@
                 </div>
                 <div class="info">
                     <h3>Informations concernant votre demande</h3>
-                    <textarea name="request" id="request" rows="30"></textarea>
+                    <textarea name="request" id="request" rows="20"></textarea>
                 </div>
-                <div class="info">&nbsp;</div>
+                <div class="info hideMobile">&nbsp;</div>
                 <div class="info">
                     <button class="centered sendEmail"><a
                             href="mailto:cedric.theveneau@agriconomie.com?subject=Demande d'informations&body=This is only a test!"
