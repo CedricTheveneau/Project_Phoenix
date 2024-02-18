@@ -288,6 +288,20 @@ document.addEventListener("DOMContentLoaded", function () {
       list.appendChild(duplicatedItem);
     });
   });
+  // Pauses animation on touch
+  if (window.innerWidth < 1000) {
+    const carousels = document.querySelectorAll(".infiniteCarouselList");
+    const pauseAnimation = (carousel) => {
+      carousel.style.animationPlayState = "paused";
+    };
+    const resumeAnimation = (carousel) => {
+      carousel.style.animationPlayState = "running";
+    };
+    carousels.forEach((carousel) => {
+      carousel.addEventListener("touchstart", pauseAnimation(carousel));
+      carousel.addEventListener("touchend", resumeAnimation(carousel));
+    });
+  }
 });
 
 //! ---------- DARK/LIGHT MODE ---------- !//

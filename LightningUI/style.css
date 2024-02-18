@@ -134,7 +134,8 @@ h3 {
     var(--textShadow) var(--textShadow) 0px var(--secondary); */
 }
 
-p {
+p,
+label {
   font-family: var(--quicksand), sans-serif;
   font-weight: var(--textWeight);
   font-style: var(--textSize);
@@ -933,10 +934,10 @@ body {
             >a:hover,
             a:active,
             a path {
-              color: var(--themeAccent);
+              color: var(--themeLight);
 
               & path {
-                fill: var(--themeAccent);
+                fill: var(--themeLight);
               }
             }
 
@@ -948,7 +949,7 @@ body {
               height: 150%;
               transform: skew(calc(var(--skew) * -1));
               position: absolute;
-              border: 3px solid var(--themeDark);
+              border: 3px solid var(--themeAccent);
               background-color: var(--themeLight);
               scale: 1;
               transition: background-color 250ms 250ms ease-in-out;
@@ -957,7 +958,7 @@ body {
 
             >a:hover::after,
             a:active::after {
-              background-color: var(--themeDark);
+              background-color: var(--themeAccent);
             }
 
             >a::before {
@@ -968,8 +969,8 @@ body {
               height: 150%;
               transform: skew(calc(var(--skew) * -1));
               position: absolute;
-              border: 3px solid var(--themeDark);
-              background-color: var(--themeDark);
+              border: 3px solid var(--themeAccent);
+              background-color: var(--themeAccent);
               scale: 1;
               transition: top 250ms ease-in-out, left 250ms ease-in-out,
                 width 250ms ease-in-out;
@@ -1045,10 +1046,10 @@ body {
             >a:hover,
             a:active,
             a path {
-              color: var(--themeAccent);
+              color: var(--themeLight);
 
               & path {
-                fill: var(--themeAccent);
+                fill: var(--themeLight);
               }
             }
 
@@ -1060,7 +1061,7 @@ body {
               height: 150%;
               transform: skew(calc(var(--skew) * -1));
               position: absolute;
-              border: 3px solid var(--themeDark);
+              border: 3px solid var(--themeAccent);
               background-color: var(--themeLight);
               scale: 1;
               transition: background-color 250ms 250ms ease-in-out;
@@ -1069,7 +1070,7 @@ body {
 
             >a:hover::after,
             a:active::after {
-              background-color: var(--themeDark);
+              background-color: var(--themeAccent);
             }
 
             >a::before {
@@ -1080,8 +1081,8 @@ body {
               height: 150%;
               transform: skew(calc(var(--skew) * -1));
               position: absolute;
-              border: 3px solid var(--themeDark);
-              background-color: var(--themeDark);
+              border: 3px solid var(--themeAccent);
+              background-color: var(--themeAccent);
               scale: 1;
               transition: top 250ms ease-in-out, left 250ms ease-in-out,
                 width 250ms ease-in-out;
@@ -1146,10 +1147,10 @@ body {
             >a:hover,
             a:active,
             a path {
-              color: var(--themeAccent);
+              color: var(--themeLight);
 
               & path {
-                fill: var(--themeAccent);
+                fill: var(--themeLight);
               }
             }
 
@@ -1161,7 +1162,7 @@ body {
               height: 150%;
               transform: skew(calc(var(--skew) * -1));
               position: absolute;
-              border: 3px solid var(--themeDark);
+              border: 3px solid var(--themeAccent);
               background-color: var(--themeLight);
               scale: 1;
               transition: background-color 250ms 250ms ease-in-out;
@@ -1170,7 +1171,7 @@ body {
 
             >a:hover::after,
             a:active::after {
-              background-color: var(--themeDark);
+              background-color: var(--themeAccent);
             }
 
             >a::before {
@@ -1181,8 +1182,8 @@ body {
               height: 150%;
               transform: skew(calc(var(--skew) * -1));
               position: absolute;
-              border: 3px solid var(--themeDark);
-              background-color: var(--themeDark);
+              border: 3px solid var(--themeAccent);
+              background-color: var(--themeAccent);
               scale: 1;
               transition: top 250ms ease-in-out, left 250ms ease-in-out,
                 width 250ms ease-in-out;
@@ -1197,6 +1198,45 @@ body {
               transition: top 250ms ease-in-out, left 250ms ease-in-out,
                 width 250ms ease-in-out;
             }
+          }
+        }
+      }
+
+      >.gridBlocs.form {
+        grid-template-columns: 1.5fr 2fr;
+
+        >.info {
+
+          >input,
+          select,
+          textarea {
+            transform: skew(calc(var(--skew)*-1));
+            border: 1px solid var(--themeAccent);
+            color: var(--themeDark);
+            background-color: var(--themeLight);
+            outline: transparent;
+          }
+
+          >input:focus-within,
+          select:focus-within,
+          textarea:focus-within {
+            border: 3px solid var(--themeAccent);
+          }
+
+          >input::placeholder,
+          select::placeholder {
+            color: var(--themeDark50);
+          }
+
+          >select {
+            >option {
+              background-color: var(--themeLight);
+              color: var(--themeDark);
+            }
+          }
+
+          >textarea {
+            transform: skew(0);
           }
         }
       }
@@ -1245,7 +1285,7 @@ body {
       }
 
       >.infiniteCarousel[data-animated]:has(li:hover) .infiniteCarouselList {
-        animation-play-state: paused;
+        animation-play-state: paused !important;
       }
 
       >button:not(.simpler) {
@@ -1277,10 +1317,10 @@ body {
         >a:hover,
         a:active,
         a path {
-          color: var(--themeAccent);
+          color: var(--themeLight);
 
           & path {
-            fill: var(--themeAccent);
+            fill: var(--themeLight);
           }
         }
 
@@ -1292,7 +1332,7 @@ body {
           height: 150%;
           transform: skew(calc(var(--skew) * -1));
           position: absolute;
-          border: 3px solid var(--themeDark);
+          border: 3px solid var(--themeAccent);
           background-color: var(--themeLight);
           scale: 1;
           transition: background-color 250ms 250ms ease-in-out;
@@ -1301,7 +1341,7 @@ body {
 
         >a:hover::after,
         a:active::after {
-          background-color: var(--themeDark);
+          background-color: var(--themeAccent);
         }
 
         >a::before {
@@ -1312,8 +1352,8 @@ body {
           height: 150%;
           transform: skew(calc(var(--skew) * -1));
           position: absolute;
-          border: 3px solid var(--themeDark);
-          background-color: var(--themeDark);
+          border: 3px solid var(--themeAccent);
+          background-color: var(--themeAccent);
           scale: 1;
           transition: top 250ms ease-in-out, left 250ms ease-in-out,
             width 250ms ease-in-out;
@@ -1374,7 +1414,7 @@ body {
           height: 150%;
           transform: skew(calc(var(--skew) * -1));
           position: absolute;
-          background-color: var(--themeDark);
+          background-color: var(--themeAccent);
           scale: 1;
           transition: height 250ms ease-in-out, top 250ms ease-in-out,
             left 250ms ease-in-out, width 250ms ease-in-out;
@@ -2278,6 +2318,10 @@ a:hover>svg.ctaArrow.pulse {
     --textLineHeight: 25px;
   }
 
+  .hideMobile {
+    display: none !important;
+  }
+
   .overflay {
     display: none;
   }
@@ -2426,6 +2470,14 @@ a:hover>svg.ctaArrow.pulse {
 
     >.info {
       gap: 20px !important;
+      justify-items: center;
+    }
+  }
+
+  .twoBlocs.reversed {
+
+    >img {
+      order: -1;
     }
   }
 
@@ -2439,12 +2491,36 @@ a:hover>svg.ctaArrow.pulse {
     padding-block: 0px 50px !important;
 
     >.info {
+      width: 100%;
       gap: 20px !important;
     }
   }
 
   .blogPost {
     grid-template-columns: unset !important;
+  }
+
+  .infiniteCarousel {
+    width: 100vw;
+    mask: linear-gradient(90deg, transparent, var(--accentLight) 15%, var(--accentLight) 85%, transparent);
+    -webkit-mask: linear-gradient(90deg, transparent, var(--accentLight) 15%, var(--accentLight) 85%, transparent);
+
+    >ul {
+      >li {
+        max-width: 50dvw !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .threeBlocs {
+    grid-template-columns: unset !important;
+    gap: 50px !important;
+
+    >.info {
+      gap: 20px !important;
+    }
   }
 }
 
@@ -2519,17 +2595,28 @@ a:hover>svg.ctaArrow.pulse {
     animation: carouselEntryRightAlt 500ms 150ms forwards;
   }
 
-  .threeBlocs {
-    grid-template-columns: unset !important;
-    gap: 50px !important;
-
-    >.info {
-      gap: 20px !important;
+  .infiniteCarousel {
+    >ul {
+      >li {
+        max-width: 85dvw !important;
+      }
     }
   }
 
   footer>nav {
     flex-direction: column;
     gap: 25px;
+
+    >.navbar {
+      padding-right: 0 !important;
+
+      >ul {
+        flex-direction: column !important;
+      }
+    }
+
+    >.logo>.branding>svg>path {
+      transform: translateX(0) !important;
+    }
   }
 }
