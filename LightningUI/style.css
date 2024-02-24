@@ -14,6 +14,7 @@
   --themeLight: #F9F9F9;
   --themeLight50: #F9F9F980;
   --themeLight10: #F9F9F94A;
+  /* Alternative color code for darker shades, based on the accent color : #29261e */
   --themeDark: #141414;
   --themeDark50: #14141480;
   --themeDark10: #1414144A;
