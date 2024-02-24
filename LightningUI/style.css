@@ -2853,7 +2853,7 @@ a:hover>svg.ctaArrow.pulse {
     }
   }
 
-  button {
+  button:not(.navCTA) {
     font-size: calc(var(--h2Size) *0.8) !important;
 
     >a {
