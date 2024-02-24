@@ -82,6 +82,10 @@ button {
   text-align: center;
 }
 
+p.centered {
+  max-width: 60dvw;
+}
+
 .alignRight {
   justify-items: flex-end;
   align-self: flex-end;
@@ -478,7 +482,8 @@ body {
         align-content: center;
         justify-items: center;
 
-        >h2 {
+        >h2,
+        h1 {
           /* --textOutline: var(--heroOutline); */
           /* --textShadow: 6px; */
           font-size: var(--heroSize);
@@ -606,7 +611,8 @@ body {
               width: 50%;
               transform: translateX(90px);
 
-              >h2 {
+              >h2,
+              h1 {
                 /* --textOutline: var(--heroOutline); */
                 /* --textShadow: 6px; */
                 font-size: var(--heroSize);
@@ -706,7 +712,8 @@ body {
               flex-direction: column;
               align-items: end;
 
-              >h2 {
+              >h2,
+              h1 {
                 text-align: right;
               }
 
@@ -798,7 +805,7 @@ body {
       & .blogPost {
         width: 100%;
         background-color: var(--themeDark10);
-        border-radius: 25px;
+        /* border-radius: 25px; */
         color: var(--themeLight);
         padding: 20px;
         display: grid;
@@ -827,7 +834,7 @@ body {
               font-weight: var(--h1Weight);
               font-size: var(--h2Size);
               font-family: var(--montserrat);
-              font-style: italic;
+              /* font-style: italic; */
             }
 
             >.tags {
@@ -971,12 +978,12 @@ body {
                 /* Purcentage animation */
 
                 >.data {
-                  >h2 {
+                  >h2.animatedCounter {
                     transition: --num 5s;
                     counter-set: num var(--num);
                   }
 
-                  >h2::after {
+                  >h2.animatedCounter::after {
                     content: counter(num);
                   }
                 }
@@ -1109,7 +1116,7 @@ body {
 
                 /* Purcentage animation */
                 >.data {
-                  >h2 {
+                  >h2.animatedCounter {
                     --num: 650;
                   }
                 }
@@ -1123,7 +1130,7 @@ body {
 
                 /* Purcentage animation */
                 >.data {
-                  >h2 {
+                  >h2.animatedCounter {
                     --num: 25;
                   }
                 }
@@ -1137,7 +1144,7 @@ body {
 
                 /* Purcentage animation */
                 >.data {
-                  >h2 {
+                  >h2.animatedCounter {
                     --num: 225000;
                   }
                 }
@@ -1319,6 +1326,12 @@ body {
         >.info {
           display: grid;
           gap: 40px;
+
+          >img {
+            max-width: 50%;
+            aspect-ratio: 1;
+            object-fit: cover;
+          }
 
           >button {
             width: fit-content;
@@ -2653,6 +2666,10 @@ a:hover>svg.ctaArrow.pulse {
     --textLineHeight: 25px;
   }
 
+  p.centered {
+    max-width: 70dvw;
+  }
+
   .hideMobile {
     display: none !important;
   }
@@ -2876,6 +2893,10 @@ a:hover>svg.ctaArrow.pulse {
     --h3Outline: 0.8px;
     --textWeight: 500;
     --textLineHeight: 25px;
+  }
+
+  p.centered {
+    max-width: 100dvw;
   }
 
   .socials {
