@@ -1,6 +1,5 @@
 /**---------- Fonts import ----------**/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&family=Lobster&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap&family=Quicksand:wght@300;400;500;600;700&family=Lobster&display=swap");
 
 /* Numbers animation setup */
 @property --num {
@@ -46,7 +45,7 @@
   --textSize: 16px;
   --textWeight: 500;
   --textLineHeight: 25px;
-  --montserrat: "Montserrat";
+  --oswald: "Oswald";
   --quicksand: "Quicksand";
   --lobster: "Lobster";
   --skew: 25deg;
@@ -59,7 +58,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--montserrat);
+  font-family: var(--oswald);
   text-decoration: none;
   scroll-behavior: smooth;
 }
@@ -104,7 +103,7 @@ body.preload * {
 h1,
 h2,
 h3 {
-  font-family: var(--montserrat), sans-serif;
+  font-family: var(--oswald), sans-serif;
   /* font-style: italic; */
   /* text-transform: uppercase; */
 }
@@ -348,7 +347,7 @@ body {
               inset: 0;
               height: 4px;
               top: 120%;
-              border-radius: 10px;
+              /* border-radius: 10px; */
               transform: skew(calc(var(--skew) * -1));
               position: absolute;
               background-color: var(--themeAccent);
@@ -830,7 +829,7 @@ body {
             >p:nth-child(1) {
               font-weight: var(--h1Weight);
               font-size: var(--h2Size);
-              font-family: var(--montserrat);
+              font-family: var(--oswald);
               /* font-style: italic; */
             }
 

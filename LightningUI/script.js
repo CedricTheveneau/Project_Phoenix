@@ -184,12 +184,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //! ---------- DYNAMICALLY ADD BLOG POSTS TO THE NEWS PAGE ---------- !//
 
-  const blogContainer = document.querySelector(".blogPostCollection");
-  if (blogContainer !== null) {
-    blogData.forEach((e) => {
-      blogContainer.innerHTML += `<div class='blogPost'><img src='${e.img}' alt='Thumbnail'><details><summary><p>${e.title}</p>${e.summary}<div class='tags'>${e.tags} ${e.date}</div></summary>${e.content}</details></div>`;
-    });
-  }
+  //? Works but unused for now
+  // const blogContainer = document.querySelector(".blogPostCollection");
+  // if (blogContainer !== null) {
+  //   blogData.forEach((e) => {
+  //     blogContainer.innerHTML += `<div class='blogPost'><img src='${e.img}' alt='Thumbnail'><details><summary><p>${e.title}</p>${e.summary}<div class='tags'>${e.tags} ${e.date}</div></summary>${e.content}</details></div>`;
+  //   });
+  // }
 
   //! ---------- RESPONSIVE MENU TOGGLE ---------- !//
 
