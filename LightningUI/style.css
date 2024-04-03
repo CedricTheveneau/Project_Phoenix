@@ -1,5 +1,7 @@
 /**---------- Fonts import ----------**/
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap&family=Quicksand:wght@300;400;500;600;700&family=Lobster&display=swap");
+@import url('https://fonts.cdnfonts.com/css/futura-std-4');
+@import url('https://fonts.cdnfonts.com/css/futura-lt');
 
 /* Numbers animation setup */
 @property --num {
@@ -17,9 +19,9 @@
   --themeDark: #141414;
   --themeDark50: #14141480;
   --themeDark10: #1414144A;
-  --themeAccent: #756732;
-  --themeAccent50: #75673280;
-  --themeAccent10: #7567324A;
+  --themeAccent: #3C5625;
+  --themeAccent50: #3C562580;
+  --themeAccent10: #3C56254A;
   --primary: #deff0a;
   --secondary: #03001f;
   --secondary50: #03001f80;
@@ -46,6 +48,8 @@
   --textWeight: 500;
   --textLineHeight: 25px;
   --oswald: "Oswald";
+  --futura: "Futura Std", sans-serif;
+  --futura2: "Futura LT", sans-serif;
   --quicksand: "Quicksand";
   --lobster: "Lobster";
   --skew: 25deg;
@@ -58,7 +62,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--oswald);
+  font-family: var(--futura2);
   text-decoration: none;
   scroll-behavior: smooth;
 }
@@ -103,7 +107,7 @@ body.preload * {
 h1,
 h2,
 h3 {
-  font-family: var(--oswald), sans-serif;
+  font-family: var(--futura2), sans-serif;
   /* font-style: italic; */
   /* text-transform: uppercase; */
 }
@@ -158,6 +162,10 @@ label {
 p>a {
   text-decoration: none;
   font-weight: 600;
+}
+
+p>span {
+  font-family: var(--quicksand), sans-serif;
 }
 
 /**todo---------- Light theme style ----------todo**/
@@ -254,7 +262,7 @@ body {
     transition: background-color 500ms ease-in-out, color 500ms ease-in-out;
 
     >nav {
-      padding-block: 10px;
+      /* padding-block: 10px; */
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -293,11 +301,11 @@ body {
           }
 
           >svg {
-            max-width: 250px;
-            max-height: 35px;
+            max-width: 404.5px;
+            max-height: 56.63px;
 
             >path {
-              transform: translateX(-200px);
+              transform: translateX(-2000px);
             }
           }
 
@@ -495,7 +503,7 @@ body {
         }
 
         >p {
-          margin-top: 10px;
+          margin-top: 30px;
           margin-bottom: 50px;
           line-height: var(--h2Size);
           font-size: var(--h2Size);
@@ -829,7 +837,7 @@ body {
             >p:nth-child(1) {
               font-weight: var(--h1Weight);
               font-size: var(--h2Size);
-              font-family: var(--oswald);
+              font-family: var(--futura2);
               /* font-style: italic; */
             }
 
@@ -1322,11 +1330,27 @@ body {
         >.info {
           display: grid;
           gap: 40px;
+          position: relative;
 
           >img {
             max-width: 50%;
             aspect-ratio: 1;
             object-fit: cover;
+          }
+
+          >img.bg {
+            max-width: 100%;
+            position: absolute;
+            aspect-ratio: 1;
+            inset: 1;
+            transform: translateY(-10%);
+            opacity: 0.5;
+            z-index: -1;
+          }
+
+          >img.illustration {
+            max-width: 100%;
+            aspect-ratio: 16/9;
           }
 
           >button {
@@ -1813,11 +1837,11 @@ body {
           }
 
           >svg {
-            max-width: 250px;
-            max-height: 35px;
+            max-width: 404.5px;
+            max-height: 56.63px;
 
             >path {
-              transform: translateX(-200px);
+              transform: translateX(-2000px);
             }
           }
 
@@ -1958,6 +1982,7 @@ body.dark {
   --themeDark: #f9f9f9;
   --themeDark50: #F9F9F980;
   --themeDark10: #F9F9F94A;
+  --themeAccent: #3b5127;
   /* --themeAccent: #8d804c; */
   /* --themeAccent: #756732; */
 
