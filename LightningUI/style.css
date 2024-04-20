@@ -2921,7 +2921,7 @@ a:hover>svg.ctaArrow.pulse {
     }
   }
 
-  >li:has(ul.dropdown)>a {
+  li:has(ul.dropdown)>a {
     display: none;
   }
 
