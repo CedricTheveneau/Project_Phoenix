@@ -1503,6 +1503,20 @@ body {
         }
       }
 
+      >.threeBlocs.accentBg {
+        position: relative;
+      }
+
+      >.threeBlocs.accentBg::after {
+        content: '';
+        width: 90%;
+        height: 25%;
+        top: 15%;
+        position: absolute;
+        background-color: var(--themeAccent);
+        z-index: -1;
+      }
+
       >.gridBlocs {
         display: grid;
         gap: 40px;
@@ -2891,6 +2905,26 @@ a:hover>svg.ctaArrow.pulse {
     display: none;
   }
 
+  ul.dropdown {
+    position: initial !important;
+    background-color: transparent !important;
+    padding: 0px !important;
+    transform: scaleY(1) translateX(0%) skew(0) !important;
+    transform-origin: none !important;
+    display: grid;
+    gap: 10px !important;
+    transition: none !important;
+
+    >li {
+      display: unset !important;
+      transform: none !important;
+    }
+  }
+
+  >li:has(ul.dropdown)>a {
+    display: none;
+  }
+
   .twoBlocs {
     grid-template-columns: unset !important;
     padding-bottom: 50px;
@@ -2954,6 +2988,10 @@ a:hover>svg.ctaArrow.pulse {
 }
 
 @media screen and (max-width: 900px) {
+  .threeBlocs.accentBg::after {
+    display: none;
+  }
+
   .threeBlocs {
     grid-template-columns: unset !important;
     gap: 50px !important;
@@ -3062,5 +3100,15 @@ a:hover>svg.ctaArrow.pulse {
     >.logo>.branding>svg>path {
       transform: translateX(0) !important;
     }
+  }
+}
+
+@media screen and (max-width: 650px) {
+
+  .threeBlocs.accentBg::after {
+    display: block !important;
+    width: 25% !important;
+    height: 65% !important;
+    top: 10% !important;
   }
 }
