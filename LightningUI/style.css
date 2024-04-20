@@ -370,6 +370,58 @@ body {
               scale: 1;
             }
 
+            >ul.dropdown {
+              position: absolute;
+              background-color: var(--themeAccent);
+              padding: 10px 10px 20px 10px;
+              left: 45%;
+              top: 15%;
+              transform: scaleY(0) translateX(-50%) skew(0);
+              transform-origin: top;
+              list-style: none;
+              display: grid;
+              gap: 20px;
+              transition: transform 250ms 0ms, top 250ms 300ms;
+
+              >li {
+                display: flex;
+                transform: skew(calc(var(--skew)));
+
+                >a {
+                  margin: auto;
+                  color: var(--themeDark);
+                  font-weight: var(--h3Weight);
+                  /* font-style: italic; */
+                  position: relative;
+                  --afterColor: var(--themeDark);
+                  --transform-origin: right center;
+                  --transform-origin-alt: left center;
+                }
+
+                >a::after {
+                  content: "";
+                  inset: 0;
+                  height: 4px;
+                  width: 100%;
+                  top: 120%;
+                  left: -10%;
+                  /* border-radius: 10px; */
+                  transform: skew(calc(var(--skew) * -1));
+                  position: absolute;
+                  background-color: var(--themeLight);
+                  scale: 0;
+                  transform-origin: var(--transform-origin);
+                  transition: scale 250ms ease-in-out;
+                }
+
+                >a:hover::after,
+                a.active::after {
+                  transform-origin: var(--transform-origin-alt);
+                  scale: 1;
+                }
+              }
+            }
+
             >.navbarToggle {
               display: none;
 
@@ -442,6 +494,20 @@ body {
               >svg.toggle {
                 display: block;
               }
+            }
+          }
+
+          >li:has(ul.dropdown) {
+            position: relative;
+            display: grid;
+            align-items: center;
+          }
+
+          >li:has(ul.dropdown):hover {
+            >ul.dropdown {
+              top: 110%;
+              transform: scaleY(1) translateX(-50%) skew(calc(var(--skew)*-1));
+              transition: transform 250ms 300ms, top 250ms 0ms;
             }
           }
 
