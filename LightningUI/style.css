@@ -224,6 +224,30 @@ body {
       font-size: var(--h3Size);
     }
 
+    >a {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--themeAccent);
+      position: relative;
+    }
+
+    a::after {
+      position: absolute;
+      content: "";
+      background-color: var(--themeAccent);
+      height: 3px;
+      inset: 0;
+      border-radius: 10px;
+      transform: translateY(20px) scaleX(0);
+      transform-origin: right center;
+      transition: transform 250ms ease-in-out;
+    }
+
+    a:hover::after {
+      transform: translateY(20px) scaleX(1);
+      transform-origin: left center;
+    }
+
 
     & path {
       fill: var(--themeDark);
@@ -1526,12 +1550,39 @@ body {
         justify-items: stretch;
 
         /* padding-block: 50px; */
+        >img {
+          max-width: 500px;
+          aspect-ratio: 1;
+          object-fit: contain;
+        }
+
         >.info {
           display: grid;
           gap: 12px;
 
           > :first-child {
             padding-bottom: 13px;
+          }
+
+          >img {
+            max-width: 50%;
+            aspect-ratio: 1;
+            object-fit: cover;
+          }
+
+          >img.bg {
+            max-width: 100%;
+            position: absolute;
+            aspect-ratio: 1;
+            inset: 1;
+            transform: translateY(-10%);
+            opacity: 0.5;
+            z-index: -1;
+          }
+
+          >img.illustration {
+            max-width: 100%;
+            aspect-ratio: 16/9;
           }
 
           >button {
@@ -1674,6 +1725,28 @@ body {
             gap: 20px;
             max-width: 40dvw;
             position: relative;
+
+            >p>span>a {
+              color: var(--themeAccent);
+              position: relative;
+            }
+
+            >p>span>a::after {
+              position: absolute;
+              content: "";
+              background-color: var(--themeAccent);
+              height: 3px;
+              inset: 0;
+              border-radius: 10px;
+              transform: translateY(20px) scaleX(0);
+              transform-origin: right center;
+              transition: transform 250ms ease-in-out;
+            }
+
+            >p>span>a:hover::after {
+              transform: translateY(20px) scaleX(1);
+              transform-origin: left center;
+            }
           }
 
           >li::before {
